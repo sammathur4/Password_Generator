@@ -1,0 +1,37 @@
+import string
+import secrets
+alphabet = string.ascii_letters + string.digits
+
+caps = input("Do you want capital letters? \n")
+if caps == "Y":
+    while True:
+        password = ''.join(secrets.choice(alphabet) for i in range(15))
+        if (any(c.islower() for c in password)
+                and any(c.isupper() for c in password)
+                and sum(c.isdigit() for c in password) >= 3):
+            break
+    print(password.upper())
+    exit()
+if caps == "N":
+    lowers = input("Do you want lower letters? \n")
+    while True:
+        password = ''.join(secrets.choice(alphabet) for i in range(15))
+        if (any(c.islower() for c in password)
+                and any(c.isupper() for c in password)
+                and sum(c.isdigit() for c in password) >= 3):
+            break
+    print(password.lower())
+    exit()
+mix = input("Do you want both lower and upper letters? \n")
+if caps =="N" and caps =="N":
+    while True:
+        password = ''.join(secrets.choice(alphabet) for i in range(15))
+        if (any(c.islower() for c in password)
+                and any(c.isupper() for c in password)
+                and sum(c.isdigit() for c in password) >= 3):
+            break
+
+
+
+print(password)
+
